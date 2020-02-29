@@ -1,18 +1,10 @@
-package com.pxy.rpcserver.rpc;
+package com.pxy.rpcserver.utils;
 
 import com.alibaba.fastjson.JSON;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClassUtil {
-
-    public static Class getClazz(String identifier) throws ClassNotFoundException {
-        // Class.forName()要求JVM查找并加载指定的类，也就是说JVM会执行该类的静态代码段
-        return Class.forName(identifier);
-    }
 
     public static Class[] getArgTypes(String argTypes) throws ClassNotFoundException {
         List<String> argTypeList = JSON.parseArray(argTypes, String.class);

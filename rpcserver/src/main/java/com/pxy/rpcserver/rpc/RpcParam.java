@@ -1,16 +1,26 @@
 package com.pxy.rpcserver.rpc;
 
-public class RpcParam {
-    private String identifier;
+import java.io.Serializable;
+
+public class RpcParam implements Serializable {
+    private String className;
     private String methodName;
     private String argTypes;
     private String argValues;
-    public String getIdentifier() {
-        return identifier;
+
+    public RpcParam(String className, String methodName, String argTypes, String argValues) {
+        this.className = className;
+        this.methodName = methodName;
+        this.argTypes = argTypes;
+        this.argValues = argValues;
     }
 
-    public void setIdentifier(String identifier) {
-        this.identifier = identifier;
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
     }
 
     public String getMethodName() {

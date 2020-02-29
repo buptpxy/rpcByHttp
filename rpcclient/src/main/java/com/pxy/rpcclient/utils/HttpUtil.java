@@ -1,6 +1,8 @@
-package com.pxy.rpcclient.rpc;
+package com.pxy.rpcclient.utils;
 
 import com.alibaba.fastjson.JSON;
+import com.pxy.rpcclient.rpc.Result;
+import com.pxy.rpcclient.rpc.RpcParam;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -40,7 +42,7 @@ public class HttpUtil {
 
     private static List<NameValuePair> getNameValuePairs(RpcParam rpcParam) {
         List<NameValuePair> paramsList = new ArrayList<>();
-        paramsList.add(new BasicNameValuePair("identifier", rpcParam.getIdentifier()));
+        paramsList.add(new BasicNameValuePair("className", rpcParam.getClassName()));
         paramsList.add(new BasicNameValuePair("methodName", rpcParam.getMethodName()));
         paramsList.add(new BasicNameValuePair("argTypes", rpcParam.getArgTypes()));
         paramsList.add(new BasicNameValuePair("argValues", rpcParam.getArgValues()));

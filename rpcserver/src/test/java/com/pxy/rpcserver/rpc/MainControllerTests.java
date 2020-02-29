@@ -20,16 +20,7 @@ public class MainControllerTests {
     MainController mainController;
     @Test
     public void testGetResult() {
-        RpcParam rpcParam = new RpcParam();
-        rpcParam.setArgTypes("[\"int\"]" );
-        rpcParam.setArgValues("[1]");
-        rpcParam.setMethodName("getUserInfo");
-        rpcParam.setIdentifier("com.pxy.rpcserver.service.UserServiceImpl");
-        Result result = mainController.getResult(rpcParam);
-        Assert.assertEquals(true,result.isSuccess());
-        Assert.assertEquals("成功",result.getMessage());
-        Assert.assertEquals("com.pxy.rpcserver.entity.User",result.getResultType());
-        Assert.assertEquals("{\"age\":18,\"id\":1,\"name\":\"madongmei\"}",result.getResultValue());
+
     }
 
 }
